@@ -1,0 +1,12 @@
+{shop_url}
+
+Olá,
+
+Obrigado por comprar na Casca Viva, como forma de agradecimento poderá usar o código {voucher} para obter um desconto de
+10% na sua seguinte compra.
+
+NOTA: Este código é válido até {end_date}.
+
+Boas compras :)
+
+[{shop_name}]({shop_url})

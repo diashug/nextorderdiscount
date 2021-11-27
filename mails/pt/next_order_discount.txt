@@ -1,0 +1,11 @@
+{shop_url}
+
+Olá {name},
+
+Como forma de agradecimento, oferecemos-lhe um voucher de desconto 10% na sua próxima compra. Para isso basta usar o código {voucher} ao finalizar a sua compra.
+
+NOTA: Este código é válido até {end_date}.
+
+Boas compras :)
+
+[{shop_name}]({shop_url})
