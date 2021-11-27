@@ -24,10 +24,6 @@ class NextOrderDiscount extends Module
         $this->description = $this->l('Emails a promocode after the first order, to be used in the second order');
 
         $this->confirmUninstall = $this->l('Are you sure you want to uninstall?');
-
-//        if (!Configuration::get('NEXTORDERDISCOUNT_NAME')) {
-//            $this->warning = $this->l('No name provided.');
-//        }
     }
 
     public function install()
@@ -35,7 +31,6 @@ class NextOrderDiscount extends Module
         return (
             parent::install()
             && $this->registerHook('actionPaymentConfirmation')
-            //&& $this->registerHook('actionOrderStatusUpdate')
         );
     }
 
@@ -43,31 +38,6 @@ class NextOrderDiscount extends Module
     {
         $this->nextOrderDiscount($params);
     }
-
-    /*public function hookActionOrderStatusUpdate($params)
-    {
-        $this->nextOrderDiscount($params);
-    }*/
-
-    /*private function nextOrderDiscount($params)
-    {
-        if(!empty($params['newOrderStatus'])) {
-
-            list($customerId, $customerEmail, $customerName, $customerStats) = $this->getData($params);
-
-            //file_put_contents('mail.txt', $customerName . ' ' . $customerEmail . ' ' . $voucherEndDate, LOCK_EX);
-
-            if ($params['newOrderStatus']->id == Configuration::get('PS_OS_WS_PAYMENT') ||
-                $params['newOrderStatus']->id == Configuration::get('PS_OS_PAYMENT')) {
-                if (($customerStats['nb_orders'] == 0) || ($customerId == 3)) {
-                    if ($customerId != null) {
-                        list($voucher, $voucherEndDate) = $this->generateVoucher($customerId);
-                        $this->sendVoucherEmail($customerEmail, $customerName, $voucher, $voucherEndDate);
-                    }
-                }
-            }
-		}
-    }*/
 
     private function nextOrderDiscount($params)
     {
