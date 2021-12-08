@@ -49,7 +49,7 @@ class NextOrderDiscount extends Module
 
                 if ($this->checkIfVoucherExists($customerId)) return;
 
-                if ((intval($customerStats['nb_orders']) == 0) || ($customerId == 3)) {
+                if (intval($customerStats['nb_orders']) == 1) {
                     list($voucher, $voucherEndDate) = $this->generateVoucher($customerId);
                     $this->sendVoucherEmail($customerEmail, $customerName, $voucher, $voucherEndDate);
                 }
